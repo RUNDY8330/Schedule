@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>PHPのテスト</title>
+</head>
+<body>
+<div style="font-size:14px">工事スケジュール</div>
+
+<hr>
+新規登録画面
+<hr>
+
+
+<form name="form1" method="post" action="list.php">
+工事名：<br>
+<input type="text" name="pj_name">
+<br>
+サーバー：<br>
+<select name="server">
+  <option value="TIIDA">TIIDA</option>
+  <option value="DC">DC</option>
+  <option value="CMP">CMP</option>
+  </select>
+  
+  
+担当名：<br>
+<input type="text" name="contact_name">
+<br>
+日付：<br>
+<input type="date" name="s_date" id="today">
+<br>
+<br>
+<input type="hidden" name="action" value="insert">
+<input type="submit" value="登録">　　[<a href="list.php">戻る</a>]<br>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+    //今日の日時を表示
+        window.onload = function () {
+            //今日の日時を表示
+            var date = new Date()
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
+          
+            var toTwoDigits = function (num, digit) {
+              num += ''
+              if (num.length < digit) {
+                num = '0' + num
+              }
+              return num
+            }
+            
+            var yyyy = toTwoDigits(year, 4)
+            var mm = toTwoDigits(month, 2)
+            var dd = toTwoDigits(day, 2)
+            var ymd = yyyy + "-" + mm + "-" + dd;
+            
+            document.getElementById("today").value = ymd;
+        }
+</script>
+
