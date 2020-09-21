@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>工事スケジュール</title>
+<title>PHPの勉強</title>
 </head>
 <body>
 <hr>
